@@ -35,8 +35,8 @@ app.UseCors("AllowAllOrigins");
 
 
 // הפעלת Swagger
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(c => 
@@ -44,7 +44,7 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
         c.RoutePrefix = string.Empty; // אם רוצים שה-Swagger יופיע ב-root
     });
-}
+//}
 
 app.MapControllers();
 
@@ -87,5 +87,5 @@ app.MapDelete("/items/{id}", async (int id, ToDoDbContext db) =>
 })
 
 .WithName("DeleteItem");
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Server is running!");
 app.Run();
