@@ -291,6 +291,7 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 ToDoListReact/node_modules/
+RenderAPIServer/node_modules/
 # Visual Studio 6 build log
 *.plg
 

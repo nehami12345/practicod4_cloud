@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://localhost:5093"
+
+const API_URL = process.env.REACT_APP_API_URL;
+//fetch(`${API_URL}/api/todos`)
+//fetch('http://localhost:3001/api/todos')
+
+axios.defaults.baseURL = `${API_URL}`;
 
 // הוספת interceptor לתפיסת שגיאות
 axios.interceptors.response.use(
