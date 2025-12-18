@@ -85,8 +85,10 @@ app.MapDelete("/items/{id}", async (int id, ToDoDbContext db) =>
     await db.SaveChangesAsync();
     return Results.NoContent();
 })
+.WithName("DeleteItem")
+.Produces(StatusCodes.Status204NoContent)
+.Produces(StatusCodes.Status404NotFound);   
 
-.WithName("DeleteItem");
 app.MapGet("/", () => "Server is running!");
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
