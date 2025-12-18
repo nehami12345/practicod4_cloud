@@ -90,5 +90,4 @@ app.MapDelete("/items/{id}", async (int id, ToDoDbContext db) =>
 app.MapGet("/", () => "Server is running!");
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-app.Run($"http://0.0.0.0:{port}");
-
+app.Run($"http://localhost:{port}");

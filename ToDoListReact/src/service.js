@@ -34,7 +34,6 @@ export default {
     });
     return result.data;
   },
-
   deleteTask: async (id) => {
     const result = await axios.delete(`/items/${id}`);
     return result.data;
